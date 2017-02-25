@@ -10,19 +10,22 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 #upper red
-GPIO.setup(17,GPIO.OUT)
+GPIO.setup(13,GPIO.OUT)
 #upper yellow
-GPIO.setup(22,GPIO.OUT)
+GPIO.setup(6,GPIO.OUT)
 #upper green
 GPIO.setup(27,GPIO.OUT)
+#lower red
+#lower yellow
+#lower green
 
 #turn all on and off
-GPIO.output(17,GPIO.HIGH)
-GPIO.output(22,GPIO.HIGH)
+GPIO.output(13,GPIO.HIGH)
+GPIO.output(6,GPIO.HIGH)
 GPIO.output(27,GPIO.HIGH)
 time.sleep(1)
-GPIO.output(17,GPIO.LOW)
-GPIO.output(22,GPIO.LOW)
+GPIO.output(13,GPIO.LOW)
+GPIO.output(6,GPIO.LOW)
 GPIO.output(27,GPIO.LOW)
 
 def mode():
@@ -38,30 +41,30 @@ def mode():
 
 def light(nBus, aBus):
     if nBus <= 5:
-        GPIO.output(17,GPIO.HIGH)
-        GPIO.output(22,GPIO.LOW)
+        GPIO.output(13,GPIO.HIGH)
+        GPIO.output(6,GPIO.LOW)
         GPIO.output(27,GPIO.LOW)
         time.sleep(60)
     elif nBus <= 10:
-        GPIO.output(17,GPIO.LOW)
-        GPIO.output(22,GPIO.HIGH)
+        GPIO.output(13,GPIO.LOW)
+        GPIO.output(6,GPIO.HIGH)
         GPIO.output(27,GPIO.LOW)
         time.sleep(60)
     elif nBus > 10:
-        GPIO.output(17,GPIO.LOW)
-        GPIO.output(22,GPIO.LOW)
+        GPIO.output(13,GPIO.LOW)
+        GPIO.output(6,GPIO.LOW)
         GPIO.output(27,GPIO.HIGH)
         time.sleep(60)
     else:
         t = 0
         while t < 60:
-            GPIO.output(17,GPIO.HIGH)
-            GPIO.output(22,GPIO.LOW)
+            GPIO.output(13,GPIO.HIGH)
+            GPIO.output(6,GPIO.LOW)
             GPIO.output(27,GPIO.HIGH)
             time.sleep(1)
             t = t + 1
-            GPIO.output(17,GPIO.LOW)
-            GPIO.output(22,GPIO.HIGH)
+            GPIO.output(13,GPIO.LOW)
+            GPIO.output(6,GPIO.HIGH)
             GPIO.output(27,GPIO.LOW)
             t = t + 1
 

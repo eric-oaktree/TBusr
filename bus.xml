@@ -2,11 +2,11 @@
 <body copyright="All data copyright MBTA 2017.">
 <predictions agencyTitle="MBTA" routeTitle="57" routeTag="57" stopTitle="Washington St opp Montfern Ave" stopTag="914">
   <direction title="Kenmore">
-  <prediction epochTime="1488053437341" seconds="420" minutes="7" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="1812" block="C57_145" tripTag="32726525" />
-  <prediction epochTime="1488053816341" seconds="799" minutes="13" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="2194" block="C57_153" tripTag="32726497" />
-  <prediction epochTime="1488054522556" seconds="1505" minutes="25" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="1821" block="C57_148" tripTag="32726479" />
-  <prediction epochTime="1488055616341" seconds="2599" minutes="43" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="2259" block="C57_147" tripTag="32726425" />
-  <prediction epochTime="1488056767850" seconds="3751" minutes="62" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="2176" block="C57_143" tripTag="32726390" />
+  <prediction epochTime="1488054616577" seconds="445" minutes="7" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="1821" block="C57_148" tripTag="32726479" />
+  <prediction epochTime="1488055616341" seconds="1445" minutes="24" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="2259" block="C57_147" tripTag="32726425" />
+  <prediction epochTime="1488056216341" seconds="2045" minutes="34" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="1822" block="C57_150" tripTag="32726408" />
+  <prediction epochTime="1488056767850" seconds="2597" minutes="43" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="2285" block="C57_143" tripTag="32726390" />
+  <prediction epochTime="1488056782490" seconds="2611" minutes="43" isDeparture="false" affectedByLayover="true" dirTag="57_1_var0" vehicle="2176" block="C57_143" tripTag="32726390" />
   </direction>
 </predictions>
 <predictions agencyTitle="MBTA" routeTitle="501" routeTag="501" stopTitle="Washington St opp Montfern Ave" stopTag="914" dirTitleBecauseNoPredictions="Brighton (Express)">
