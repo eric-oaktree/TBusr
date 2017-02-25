@@ -102,7 +102,7 @@ def light(nBus, aBus):
             t = t + 1
     #next bus is under 10 and after bus is over 10
     elif nBus <= 10 and aBus > 10:
-        GPIO.output(13,GPIO.LOW)
+        GPIO.output(27,GPIO.LOW)
         GPIO.output(6,GPIO.HIGH)
         t = 0
         while t < 60:
