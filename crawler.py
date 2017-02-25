@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 ##T-Tracker
 #<agency tag="mbta" title="MBTA" regionTitle="Massachusetts"/>
 #<route tag="501" title="501"/>
@@ -14,3 +15,22 @@
 
 
 #http://webservices.nextbus.com/service/publicXMLFeed?command=predictions&a=mbta&stopId=00977
+
+
+import datetime, requests, bs4, re
+from lxml import etree
+
+routeReg = re.compile(r'routeTitle="(\d+)"')
+
+def grabber(stop):
+    feed = requests.get('http://webservices.nextbus.com/service/publicXMLFeed?command=predictions&a=mbta&stopId=' + stop)
+    if feed.status_code == requests.codes.ok:
+        soup = bs4.BeautifulSoup(feed.text)
+        print(soup)
+        preds = soup.select('predictions[routeTitle="501"]')
+        print(preds)
+
+    else:
+        print('API Error')
+
+grabber('00977')
