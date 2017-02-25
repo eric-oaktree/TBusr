@@ -40,21 +40,115 @@ def mode():
     return mode
 
 def light(nBus, aBus):
-    if nBus <= 5:
+    #next bus is under 5 and after bus is under 5
+    if nBus <= 5 and aBus <= 5:
         GPIO.output(13,GPIO.HIGH)
         GPIO.output(6,GPIO.LOW)
+        t = 0
+        while t < 60:
+            GPIO.output(27,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(27,GPIO.LOW)
+            time.sleep(1)
+            t = t + 1
+    #next bus is under 5 and after bus is under 10
+    elif nBus <= 5 and aBus <= 10:
+        GPIO.output(13,GPIO.HIGH)
         GPIO.output(27,GPIO.LOW)
-        time.sleep(60)
-    elif nBus <= 10:
+        t = 0
+        while t < 60:
+            GPIO.output(6,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(6,GPIO.LOW)
+            time.sleep(1)
+            t = t + 1
+    #next bus is under 5 and after bus is over 10
+    elif nBus <= 5 and aBus > 10:
+        GPIO.output(6,GPIO.LOW)
+        GPIO.output(27,GPIO.LOW)
+        t = 0
+        while t < 60:
+            GPIO.output(13,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(13,GPIO.LOW)
+            time.sleep(1)
+            t = t + 1
+    #next bus is under 10 and after bus is under 5
+    elif nBus <= 10 and aBus <= 5:
         GPIO.output(13,GPIO.LOW)
         GPIO.output(6,GPIO.HIGH)
+        t = 0
+        while t < 60:
+            GPIO.output(27,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(27,GPIO.LOW)
+            time.sleep(1)
+            t = t + 1
+    #next bus is under 10  and after bus is under 10
+    elif nBus <= 10 and aBus <= 10:
+        GPIO.output(13,GPIO.LOW)
         GPIO.output(27,GPIO.LOW)
-        time.sleep(60)
-    elif nBus > 10:
+        t = 0
+        while t < 60:
+            GPIO.output(6,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(6,GPIO.LOW)
+            time.sleep(1)
+            t = t + 1
+    #next bus is under 10 and after bus is over 10
+    elif nBus <= 10 and aBus > 10:
+        GPIO.output(13,GPIO.LOW)
+        GPIO.output(6,GPIO.HIGH)
+        t = 0
+        while t < 60:
+            GPIO.output(13,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(13,GPIO.LOW)
+            time.sleep(1)
+            t = t + 1
+    #next bus is over 10 and after bus is under 5
+    elif nBus > 10 and aBus <= 5:
         GPIO.output(13,GPIO.LOW)
         GPIO.output(6,GPIO.LOW)
+        t = 0
+        while t < 60:
+            GPIO.output(27,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(27,GPIO.LOW)
+            time.sleep(1)
+            t = t + 1
+    #next bus is over 10 and after bus is under 10
+    elif nBus > 10 and aBus <= 10:
         GPIO.output(27,GPIO.HIGH)
-        time.sleep(60)
+        GPIO.output(13,GPIO.LOW)
+        t = 0
+        while t < 60:
+            GPIO.output(6,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(6,GPIO.LOW)
+            time.sleep(1)
+            t = t + 1
+    #next bus is over 10 and after bus is over 10
+    elif nBus > 10 and aBus > 10:
+        GPIO.output(27,GPIO.HIGH)
+        GPIO.output(6,GPIO.LOW)
+        t = 0
+        while t < 60:
+            GPIO.output(13,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(13,GPIO.LOW)
+            time.sleep(1)
+            t = t + 1
+    #errors
     else:
         t = 0
         while t < 60:
@@ -75,8 +169,8 @@ def main():
         bus = buses['501']
         nBus = bus['next']
         aBus = bus['after']
+        aBus = (int(aBus) - int(nBus)) / 60
         nBus = int(nBus) / 60
-        aBus = int(aBus) / 60
         light(nBus, aBus)
 
     elif mode () == 2:
@@ -85,8 +179,8 @@ def main():
         bus = buses['57']
         nBus = bus['next']
         aBus = bus['after']
+        aBus = (int(aBus) - int(nBus)) / 60
         nBus = int(nBus) / 60
-        aBus = int(aBus) / 60
         light(nBus, aBus)
 
     else:
