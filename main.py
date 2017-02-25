@@ -43,15 +43,15 @@ def light(nBus, aBus):
         GPIO.output(27,GPIO.LOW)
         time.sleep(60)
     elif nBus <= 10:
-        time.sleep(60)
         GPIO.output(17,GPIO.LOW)
         GPIO.output(22,GPIO.HIGH)
         GPIO.output(27,GPIO.LOW)
-    elif nBus > 10:
         time.sleep(60)
+    elif nBus > 10:
         GPIO.output(17,GPIO.LOW)
         GPIO.output(22,GPIO.LOW)
         GPIO.output(27,GPIO.HIGH)
+        time.sleep(60)
     else:
         t = 0
         while t < 60:
