@@ -17,20 +17,55 @@
 #http://webservices.nextbus.com/service/publicXMLFeed?command=predictions&a=mbta&stopId=00977
 
 
-import datetime, requests, bs4, re
-from lxml import etree
+import datetime, requests, bs4, re, os
 
+cwd = os.getcwd()
 routeReg = re.compile(r'routeTitle="(\d+)"')
 
 def grabber(stop):
     feed = requests.get('http://webservices.nextbus.com/service/publicXMLFeed?command=predictions&a=mbta&stopId=' + stop)
     if feed.status_code == requests.codes.ok:
-        soup = bs4.BeautifulSoup(feed.text)
-        print(soup)
-        preds = soup.select('predictions[routeTitle="501"]')
-        print(preds)
-
+        xml = open('bus.xml', 'w')
+        xml.write(feed.text)
+        xml.close()
     else:
         print('API Error')
 
-grabber('00977')
+def active_routes():
+    routes = {}
+    xmlf = open('bus.xml', 'r')
+    xml = xmlf.read()
+    soup = bs4.BeautifulSoup(xml, 'xml')
+    preds = soup.find_all('predictions')
+    for pred in preds:
+        pred_attr = dict(pred.attrs)
+        route = pred_attr['routeTitle']
+        active = pred_attr.get('dirTitleBecauseNoPredictions', 'Active')
+        if active != 'Active':
+            active = 'Inactive'
+        routes[route] = active
+    return routes
+
+def next_bus():
+    routeDict = {}
+    xmlf = open('bus.xml', 'r')
+    xml = xmlf.read()
+    soup = bs4.BeautifulSoup(xml, 'xml')
+    preds = soup.find_all('predictions')
+    for pred in preds:
+        busDict = {}
+        pred_attr = dict(pred.attrs)
+        route = pred_attr['routeTitle']
+        active = pred_attr.get('dirTitleBecauseNoPredictions', 'Active')
+        if active != 'Active':
+            active = 'Inactive'
+        if active == 'Active':
+            busList = pred.find_all('prediction')
+            bus1Dict = dict(busList[0].attrs)
+            bus2Dict = dict(busList[1].attrs)
+            busDict['next'] = bus1Dict['seconds']
+            busDict['after'] = bus2Dict['seconds']
+            routeDict[route] = busDict
+        else:
+            routeDict[route] = 'Inactive'
+    return routeDict

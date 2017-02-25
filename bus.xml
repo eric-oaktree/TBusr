@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<body copyright="All data copyright MBTA 2017.">
+<predictions agencyTitle="MBTA" routeTitle="57" routeTag="57" stopTitle="Washington St @ Montfern Ave" stopTag="977">
+  <direction title="Watertown Yard">
+  <prediction epochTime="1488024023233" seconds="136" minutes="2" isDeparture="false" dirTag="57_0_var0" vehicle="1822" block="C57_152" tripTag="32726463" />
+  <prediction epochTime="1488025029168" seconds="1142" minutes="19" isDeparture="false" dirTag="57_0_var0" vehicle="1788" block="C57_142" tripTag="32726455" />
+  <prediction epochTime="1488025771557" seconds="1885" minutes="31" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2191" block="C57_144" tripTag="32726532" />
+  <prediction epochTime="1488026371557" seconds="2485" minutes="41" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2233" block="C57_145" tripTag="32726520" />
+  <prediction epochTime="1488027651160" seconds="3764" minutes="62" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2259" block="C57_150" tripTag="32726444" />
+  </direction>
+</predictions>
+<predictions agencyTitle="MBTA" routeTitle="501" routeTag="501" stopTitle="Washington St @ Montfern Ave" stopTag="977" dirTitleBecauseNoPredictions="Downtown (Express)">
+</predictions>
+<predictions agencyTitle="MBTA" routeTitle="503" routeTag="503" stopTitle="Washington St @ Montfern Ave" stopTag="977" dirTitleBecauseNoPredictions="Copley (Express)">
+</predictions>
+<predictions agencyTitle="MBTA" routeTitle="57A" routeTag="57A" stopTitle="Washington St @ Montfern Ave" stopTag="977" dirTitleBecauseNoPredictions="Oak Square">
+</predictions>
+</body>
