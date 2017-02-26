@@ -51,17 +51,18 @@ def convert(color):
 
 def on(color):
     pin = convert(color)
-    GPIO.output(pin,GPIO.HIGH)
+    print(pin)
+    GPIO.output(int(pin),GPIO.HIGH)
 
 def off(color):
     pin = convert(color)
-    GPIO.output(pin,GPIO.LOW)
+    GPIO.output(int(pin),GPIO.LOW)
 
 def blink(color):
     pin = convert(color)
-    GPIO.output(pin,GPIO.HIGH)
+    GPIO.output(int(pin),GPIO.HIGH)
     time.sleep(1)
-    GPIO.output(pin,GPIO.LOW)
+    GPIO.output(int(pin),GPIO.LOW)
     time.sleep(1)
 
 def cont(red, yellow, green):
@@ -91,7 +92,7 @@ def cont(red, yellow, green):
             blink(green)
             t = t + 1
     if red == 'blink' and yellow == 'on' and green == 'off':
-        on(yellow)
+        on('yellow')
         off(green)
         while t < 30:
             blink(red)
@@ -170,7 +171,7 @@ def main():
         crawler.grabber('00977')
         buses = crawler.next_bus()
         bus = buses['501']
-        if bus != 'Inactive'
+        if bus != 'Inactive':
             nBus = bus['next']
             aBus = bus['after']
             aBus = (int(aBus) - int(nBus)) / 60
@@ -185,7 +186,7 @@ def main():
         crawler.grabber('00914')
         buses = crawler.next_bus()
         bus = buses['57']
-        if bus != 'Inactive'
+        if bus != 'Inactive':
             nBus = bus['next']
             aBus = bus['after']
             aBus = (int(aBus) - int(nBus)) / 60

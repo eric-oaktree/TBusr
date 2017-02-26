@@ -17,7 +17,8 @@
 #http://webservices.nextbus.com/service/publicXMLFeed?command=predictions&a=mbta&stopId=00977
 
 
-import datetime, requests, bs4, re, os
+import datetime, requests, re, os
+import bs4
 
 cwd = os.getcwd()
 routeReg = re.compile(r'routeTitle="(\d+)"')
