@@ -35,6 +35,7 @@ def mode():
     h = now.strftime('%p')
     if (wday == '1' or wday == '2' or wday == '3' or wday == '4' or wday == '5') and h == 'AM':
         mode = 1
+        routes = crawler.active_routes()
     else:
         mode = 2
     return mode
@@ -149,7 +150,7 @@ def light(nBus, aBus):
             time.sleep(1)
             t = t + 1
     #errors
-    else:
+    elif nBus == 'er' and aBus == 'er':
         t = 0
         while t < 60:
             GPIO.output(13,GPIO.HIGH)
@@ -161,27 +162,39 @@ def light(nBus, aBus):
             GPIO.output(6,GPIO.HIGH)
             GPIO.output(27,GPIO.LOW)
             t = t + 1
+    else:
+        print('Error')
 
 def main():
     if mode() == 1:
         crawler.grabber('00977')
         buses = crawler.next_bus()
         bus = buses['501']
-        nBus = bus['next']
-        aBus = bus['after']
-        aBus = (int(aBus) - int(nBus)) / 60
-        nBus = int(nBus) / 60
-        light(nBus, aBus)
+        if bus != 'Inactive'
+            nBus = bus['next']
+            aBus = bus['after']
+            aBus = (int(aBus) - int(nBus)) / 60
+            nBus = int(nBus) / 60
+            light(nBus, aBus)
+        else:
+            nBus = 'er'
+            aBus = 'er'
+
+
 
     elif mode () == 2:
         crawler.grabber('00914')
         buses = crawler.next_bus()
         bus = buses['57']
-        nBus = bus['next']
-        aBus = bus['after']
-        aBus = (int(aBus) - int(nBus)) / 60
-        nBus = int(nBus) / 60
-        light(nBus, aBus)
+        if bus != 'Inactive'
+            nBus = bus['next']
+            aBus = bus['after']
+            aBus = (int(aBus) - int(nBus)) / 60
+            nBus = int(nBus) / 60
+            light(nBus, aBus)
+        else:
+            nBus = 'er'
+            aBus = 'er'
 
     else:
         print('Error')
