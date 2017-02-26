@@ -179,6 +179,7 @@ def main():
         else:
             nBus = 'er'
             aBus = 'er'
+            light(nBus, aBus)
 
     elif mode() == 2:
         crawler.grabber('00914')
@@ -193,6 +194,7 @@ def main():
         else:
             nBus = 'er'
             aBus = 'er'
+            light(nBus, aBus)
 
     else:
         print('Error')
