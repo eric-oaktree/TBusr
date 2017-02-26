@@ -68,58 +68,58 @@ def blink(color):
 def cont(red, yellow, green):
     t = 0
     if red == 'on' and yellow == 'off' and green == 'blink':
-        on(red)
-        off(yellow)
+        on('red')
+        off('yellow')
         while t < 30:
-            blink(green)
+            blink('green')
             t = t + 1
     if red == 'on' and yellow == 'blink' and green == 'off':
-        on(red)
-        off(green)
+        on('red')
+        off('green')
         while t < 30:
-            blink(yellow)
+            blink('yellow')
             t = t + 1
     if red == 'blink' and yellow == 'off' and green == 'off':
-        off(yellow)
-        off(green)
+        off('yellow')
+        off('green')
         while t < 30:
-            blink(red)
+            blink('red')
             t = t + 1
     if red == 'off' and yellow == 'on' and green == 'blink':
-        on(yellow)
-        off(red)
+        on('yellow')
+        off('red')
         while t < 30:
-            blink(green)
+            blink('green')
             t = t + 1
     if red == 'blink' and yellow == 'on' and green == 'off':
         on('yellow')
-        off(green)
+        off('green')
         while t < 30:
-            blink(red)
+            blink('red')
             t = t + 1
     if red == 'off' and yellow == 'blink' and green == 'off':
-        off(red)
-        off(green)
+        off('red')
+        off('green')
         while t < 30:
-            blink(yellow)
+            blink('yellow')
             t = t + 1
     if red == 'blink' and yellow == 'off' and green == 'on':
-        on(green)
-        off(yellow)
+        on('green')
+        off('yellow')
         while t < 30:
-            blink(red)
+            blink('red')
             t = t + 1
     if red == 'off' and yellow == 'blink' and green == 'on':
-        on(green)
-        off(red)
+        on('green')
+        off('red')
         while t < 30:
-            blink(yellow)
+            blink('yellow')
             t = t + 1
     if red == 'off' and yellow == 'off' and green == 'blink':
-        off(red)
-        off(yellow)
+        off('red')
+        off('yellow')
         while t < 30:
-            blink(green)
+            blink('green')
             t = t + 1
 
 def light(nBus, aBus):
