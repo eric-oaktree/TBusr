@@ -134,6 +134,7 @@ def light(nBus, aBus):
             GPIO.output(6,GPIO.HIGH)
             GPIO.output(27,GPIO.LOW)
             t = t + 1
+            time.sleep(1)
     #next bus is under 5 and after bus is under 5
     elif nBus <= 5 and aBus <= 5:
         cont('on', 'off', 'blink')

@@ -4,11 +4,11 @@
 </predictions>
 <predictions agencyTitle="MBTA" routeTitle="57" routeTag="57" stopTitle="Washington St @ Montfern Ave" stopTag="977">
   <direction title="Watertown Yard">
-  <prediction epochTime="1488153857227" seconds="209" minutes="3" isDeparture="false" dirTag="57_0_var0" vehicle="2294" block="C57_138" tripTag="32736051" />
-  <prediction epochTime="1488154515246" seconds="867" minutes="14" isDeparture="false" dirTag="57_0_var0" vehicle="1783" block="C57_139" tripTag="32735976" />
-  <prediction epochTime="1488155386277" seconds="1738" minutes="28" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2190" block="C57_141" tripTag="32736033" />
-  <prediction epochTime="1488156286277" seconds="2638" minutes="43" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2191" block="C57_135" tripTag="32736045" />
-  <prediction epochTime="1488157186277" seconds="3538" minutes="58" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2278" block="C57_134" tripTag="32736016" />
+  <prediction epochTime="1488154738380" seconds="382" minutes="6" isDeparture="false" dirTag="57_0_var0" vehicle="1783" block="C57_139" tripTag="32735976" />
+  <prediction epochTime="1488155413487" seconds="1057" minutes="17" isDeparture="false" dirTag="57_0_var0" vehicle="2190" block="C57_141" tripTag="32736033" />
+  <prediction epochTime="1488156286277" seconds="1930" minutes="32" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2191" block="C57_135" tripTag="32736045" />
+  <prediction epochTime="1488157186277" seconds="2830" minutes="47" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2278" block="C57_134" tripTag="32736016" />
+  <prediction epochTime="1488158086277" seconds="3730" minutes="62" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="1798" block="C57_137" tripTag="32735987" />
   </direction>
 </predictions>
 <predictions agencyTitle="MBTA" routeTitle="503" routeTag="503" stopTitle="Washington St @ Montfern Ave" stopTag="977" dirTitleBecauseNoPredictions="Copley (Express)">
