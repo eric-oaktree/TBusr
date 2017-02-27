@@ -51,7 +51,6 @@ def convert(color):
 
 def on(color):
     pin = convert(color)
-    print(pin)
     GPIO.output(int(pin),GPIO.HIGH)
 
 def off(color):
