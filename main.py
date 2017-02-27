@@ -122,8 +122,20 @@ def cont(red, yellow, green):
             t = t + 1
 
 def light(nBus, aBus):
+    if nBus == 'er' and aBus == 'er':
+        t = 0
+        while t < 60:
+            GPIO.output(13,GPIO.HIGH)
+            GPIO.output(6,GPIO.LOW)
+            GPIO.output(27,GPIO.HIGH)
+            time.sleep(1)
+            t = t + 1
+            GPIO.output(13,GPIO.LOW)
+            GPIO.output(6,GPIO.HIGH)
+            GPIO.output(27,GPIO.LOW)
+            t = t + 1
     #next bus is under 5 and after bus is under 5
-    if nBus <= 5 and aBus <= 5:
+    elif nBus <= 5 and aBus <= 5:
         cont('on', 'off', 'blink')
     #next bus is under 5 and after bus is under 10
     elif nBus <= 5 and aBus <= 10:
@@ -149,19 +161,6 @@ def light(nBus, aBus):
     #next bus is over 10 and after bus is over 10
     elif nBus > 10 and aBus > 10:
         cont('blink', 'off', 'on')
-    #errors
-    elif nBus == 'er' and aBus == 'er':
-        t = 0
-        while t < 60:
-            GPIO.output(13,GPIO.HIGH)
-            GPIO.output(6,GPIO.LOW)
-            GPIO.output(27,GPIO.HIGH)
-            time.sleep(1)
-            t = t + 1
-            GPIO.output(13,GPIO.LOW)
-            GPIO.output(6,GPIO.HIGH)
-            GPIO.output(27,GPIO.LOW)
-            t = t + 1
     else:
         print('Error')
 
