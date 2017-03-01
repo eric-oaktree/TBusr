@@ -186,7 +186,7 @@ def setbus(upstop, upline, downstop, downline):
 def main():
     reset()
     if mode() == 1:
-	try:
+        try:
             points = setbus('00977', '501', '00977', '503')
             lcd.clear()
             lcd.message('501:' + str(round(points[0], 1)) + ' A:' + str(round(points[1], 1)) + '\n503:' + str(round(points[2], 1)) + ' A:' + str(round(points[3], 1)))
@@ -201,8 +201,8 @@ def main():
             lcd.clear()
             lcd.message('I-57:' + str(round(points[0], 1)) + ' A:' + str(round(points[1], 1)) + '\nO-57:' + str(round(points[2], 1)) + ' A:' + str(round(points[3], 1)))
             light(points[0], points[1], points[2], points[3])
-	except:
-	    lcd.message('Error\nbrb o_O')
+        except:
+            lcd.message('Error\nbrb o_O')
             time.sleep(60)
     else:
         print('Error')
