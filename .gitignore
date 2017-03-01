@@ -1,3 +1,4 @@
 TBusr_env/
 __pycache__/
 *.xml
+*.pyc
