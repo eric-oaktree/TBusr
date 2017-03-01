@@ -180,13 +180,15 @@ def main():
     reset()
     if mode() == 1:
         points = setbus('00977', '501', '00977', '503')
-        lcd.message('In501: ' + str(points[0]) + 'A: ' + str(points[1]) + '\nIn503: ' + str(points[2]) + 'A: ' + str(points[3]))
+        lcd.clear()
+        lcd.message('501: ' + str(points[0]) + ' A: ' + str(points[1]) + '\n503: ' + str(points[2]) + ' A: ' + str(points[3]))
         light(points[0], points[1], points[2], points[3])
 
 
     elif mode() == 2:
         points = setbus('00914', '57', '00977', '57')
-        lcd.message('In57: ' + str(points[0]) + 'A: ' + str(points[1]) + '\nOut57: ' + str(points[2]) + 'A: ' + str(points[3]))
+        lcd.clear()
+        lcd.message('In57: ' + str(points[0]) + ' A: ' + str(points[1]) + '\nOut57: ' + str(points[2]) + ' A: ' + str(points[3]))
         light(points[0], points[1], points[2], points[3])
 
     else:
