@@ -61,9 +61,16 @@ def reset():
 # Print a two line message
 lcd.message('TBusrrrr\nACTIVATTTEEE!')
 
+class EST(datetime.tzinfo):
+    def utcoffset(self, dt):
+      return datetime.timedelta(hours=-5)
+
+    def dst(self, dt):
+        return datetime.timedelta(0)
+
 def mode():
     #toggles mode based on time and day
-    now = datetime.today()
+    now = datetime.now(EST())
     wday = now.strftime('%w')
     h = now.strftime('%p')
     print(wday)
