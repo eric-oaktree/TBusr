@@ -2,11 +2,11 @@
 <body copyright="All data copyright MBTA 2017.">
 <predictions agencyTitle="MBTA" routeTitle="57" routeTag="57" stopTitle="Washington St @ Montfern Ave" stopTag="977">
   <direction title="Watertown Yard">
-  <prediction epochTime="1488334026705" seconds="714" minutes="11" isDeparture="false" delayed="true" slowness="0.268" dirTag="57_0_var0" vehicle="1783" block="C22_180" tripTag="32891939" />
-  <prediction epochTime="1488334185253" seconds="872" minutes="14" isDeparture="false" dirTag="57_0_var0" vehicle="0451" block="A57_9" tripTag="32753062" />
-  <prediction epochTime="1488334800915" seconds="1488" minutes="24" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="1834" block="C11_99" tripTag="32891944" />
-  <prediction epochTime="1488335838090" seconds="2525" minutes="42" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2246" block="C44_234" tripTag="32892354" />
-  <prediction epochTime="1488336360915" seconds="3048" minutes="50" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="1789" block="C57_273" tripTag="32892355" />
+  <prediction epochTime="1488335520020" seconds="453" minutes="7" isDeparture="false" dirTag="57_0_var0" vehicle="1834" block="C11_99" tripTag="32891944" />
+  <prediction epochTime="1488336158915" seconds="1092" minutes="18" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="2246" block="C44_234" tripTag="32892354" />
+  <prediction epochTime="1488336604534" seconds="1538" minutes="25" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="1789" block="C57_273" tripTag="32892355" />
+  <prediction epochTime="1488337140915" seconds="2074" minutes="34" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="0446" block="C57_274" tripTag="32892356" />
+  <prediction epochTime="1488337920915" seconds="2854" minutes="47" isDeparture="false" affectedByLayover="true" dirTag="57_0_var0" vehicle="1783" block="C22_180" tripTag="32892357" />
   </direction>
 </predictions>
 <predictions agencyTitle="MBTA" routeTitle="501" routeTag="501" stopTitle="Washington St @ Montfern Ave" stopTag="977" dirTitleBecauseNoPredictions="Downtown (Express)">

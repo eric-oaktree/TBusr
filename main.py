@@ -2,7 +2,7 @@
 #main loop of the program, calls the crawler module and sends results to the GPIO
 
 import crawler
-from datetime import datetime
+import datetime
 import Adafruit_CharLCD as LCD
 import RPi.GPIO as GPIO
 import time
@@ -70,11 +70,11 @@ class EST(datetime.tzinfo):
 
 def mode():
     #toggles mode based on time and day
-    now = datetime.now(EST())
+    now = datetime.datetime.now(EST())
     wday = now.strftime('%w')
     h = now.strftime('%p')
-    print(wday)
-    print(h)
+    #print(wday)
+    #print(h)
     if (wday == '1' or wday == '2' or wday == '3' or wday == '4' or wday == '5') and h == 'AM':
         mode = 1
     else:
@@ -188,14 +188,14 @@ def main():
     if mode() == 1:
         points = setbus('00977', '501', '00977', '503')
         lcd.clear()
-        lcd.message('501: ' + str(points[0]) + ' A: ' + str(points[1]) + '\n503: ' + str(points[2]) + ' A: ' + str(points[3]))
+        lcd.message('501:' + str(round(points[0], 1)) + ' A:' + str(round(points[1], 1)) + '\n503:' + str(round(points[2], 1)) + ' A:' + str(round(points[3], 1)))
         light(points[0], points[1], points[2], points[3])
 
 
     elif mode() == 2:
         points = setbus('00914', '57', '00977', '57')
         lcd.clear()
-        lcd.message('In57: ' + str(points[0]) + ' A: ' + str(points[1]) + '\nOut57: ' + str(points[2]) + ' A: ' + str(points[3]))
+        lcd.message('I-57:' + str(round(points[0], 1)) + ' A:' + str(round(points[1], 1)) + '\nO-57:' + str(round(points[2], 1)) + ' A:' + str(round(points[3], 1)))
         light(points[0], points[1], points[2], points[3])
 
     else:
