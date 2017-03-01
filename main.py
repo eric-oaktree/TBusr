@@ -49,13 +49,13 @@ GPIO.setup(downgreen,GPIO.OUT)
 
 #turn all on and off
 def lopen():
-    for pin in pins:
+    for pin in lightpins:
         GPIO.output(int(pin),GPIO.HIGH)
-    for pin in pins:
+    for pin in lightpins:
         GPIO.output(int(pin),GPIO.LOW)
 
 def reset():
-    for pin in pins:
+    for pin in lightpins:
         GPIO.output(int(pin),GPIO.LOW)
 
 # Print a two line message
@@ -106,14 +106,14 @@ def blink(color1, color2):
     time.sleep(1)
 
 def assign(time, b):
-    if b = 'n':
+    if b == 'n':
         if time <= 5:
             return 'red'
         if time <= 10:
             return 'yellow'
         if time > 10:
             return 'green'
-    if b = 'a':
+    if b == 'a':
         if time <= 5:
             return 'green'
         if time <=10:
@@ -122,10 +122,10 @@ def assign(time, b):
             return 'red'
 
 def light(upnBus, upaBus, dnnBus, dnaBus):
-    upsol = assign(upnBus, n)
-    dnsol = assign(dnnBus, n)
-    upblink = assign(upaBus, a)
-    dnblink = assign(dnaBus, a)
+    upsol = assign(upnBus, 'n')
+    dnsol = assign(dnnBus, 'n')
+    upblink = assign(upaBus, 'a')
+    dnblink = assign(dnaBus, 'a')
     t = 0
     while t < 30:
         if upsol == upblink and dnsol == dnblink:
@@ -144,7 +144,7 @@ def light(upnBus, upaBus, dnnBus, dnaBus):
 
 def setbus(upstop, upline, downstop, downline):
     crawler.grabber(upstop)
-    buses = crawler.nextbus()
+    buses = crawler.next_bus()
     bus = buses[upline]
     if bus != 'Inactive':
         nBus = bus['next']
@@ -155,7 +155,7 @@ def setbus(upstop, upline, downstop, downline):
         upnBus = 'er'
         upaBus = 'er'
     crawler.grabber(downstop)
-    buses = crawler.nextbus()
+    buses = crawler.next_bus()
     bus = buses[downline]
     if bus != 'Inactive':
         nBus = bus['next']
