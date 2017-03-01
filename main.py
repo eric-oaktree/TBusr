@@ -66,6 +66,8 @@ def mode():
     now = datetime.today()
     wday = now.strftime('%w')
     h = now.strftime('%p')
+    print(wday)
+    print(h)
     if (wday == '1' or wday == '2' or wday == '3' or wday == '4' or wday == '5') and h == 'AM':
         mode = 1
     else:
