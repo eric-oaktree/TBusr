@@ -76,6 +76,8 @@ def mode():
 
 #red = 13 yellow = 6 green = 27
 def convert(color, side):
+    if color == 'er':
+        return upred
     if color == 'red' and side == 'up':
         return upred
     elif color == 'yellow' and side == 'up':
@@ -89,17 +91,17 @@ def convert(color, side):
     elif color == 'green' and side == 'down':
         return downgreen
 
-def on(color):
-    pin = convert(color)
+def on(color, side):
+    pin = convert(color, side)
     GPIO.output(int(pin),GPIO.HIGH)
 
-def off(color):
-    pin = convert(color)
+def off(color, side):
+    pin = convert(color, side)
     GPIO.output(int(pin),GPIO.LOW)
 
-def blink(color1, color2):
-    pin1 = convert(color1)
-    pin2 = convert(color2)
+def blink(color1, color2, side1, side2):
+    pin1 = convert(color1, side1)
+    pin2 = convert(color2, side2)
     GPIO.output(int(pin1),GPIO.HIGH)
     GPIO.output(int(pin2),GPIO.HIGH)
     time.sleep(1)
@@ -109,7 +111,7 @@ def blink(color1, color2):
 
 def assign(time, b):
     if b == 'n':
-        if time == 'er'
+        if time == 'er':
             return 'er'
         if time <= 5:
             return 'red'
@@ -118,7 +120,7 @@ def assign(time, b):
         if time > 10:
             return 'green'
     if b == 'a':
-        if time == 'er'
+        if time == 'er':
             return 'er'
         if time <= 5:
             return 'green'
@@ -135,17 +137,17 @@ def light(upnBus, upaBus, dnnBus, dnaBus):
     t = 0
     while t < 30:
         if upsol == upblink and dnsol == dnblink:
-            blink(upblink, dnblink)
+            blink(upblink, dnblink, 'up', 'down')
         if upsol == upblink:
-            on(dnsol)
-            blink(upblink, dnblink)
+            on(dnsol, 'down')
+            blink(upblink, dnblink, 'up', 'down')
         if dnsol == dnblink:
-            on(upsol)
-            blink(upblink, dnblink)
+            on(upsol, 'up')
+            blink(upblink, dnblink, 'up', 'down')
         else:
-            on(upsol)
-            on(dnsol)
-            blink(upblink, dnblink)
+            on(upsol, 'up')
+            on(dnsol, 'down')
+            blink(upblink, dnblink, 'up', 'down')
         t = t + 1
 
 def setbus(upstop, upline, downstop, downline):
