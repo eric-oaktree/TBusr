@@ -109,6 +109,8 @@ def blink(color1, color2):
 
 def assign(time, b):
     if b == 'n':
+        if time == 'er'
+            return 'er'
         if time <= 5:
             return 'red'
         if time <= 10:
@@ -116,6 +118,8 @@ def assign(time, b):
         if time > 10:
             return 'green'
     if b == 'a':
+        if time == 'er'
+            return 'er'
         if time <= 5:
             return 'green'
         if time <=10:
